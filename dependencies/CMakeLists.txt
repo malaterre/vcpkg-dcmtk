@@ -5,8 +5,11 @@ set(DCMTK_WITH_PNG ON)
 # https://github.com/DCMTK/dcmtk/pull/78
 if(WIN32)
   find_package(PNG REQUIRED)
-  message(STATUS ${PNG_INCLUDE_DIR})
+  message(STATUS "DCMTK/PNG: ${PNG_INCLUDE_DIR}")
   set(WITH_LIBPNGINC ${PNG_INCLUDE_DIR}/..)
+  find_package(ZLIB REQUIRED)
+  message(STATUS "DCMTK/ZLIB: ${ZLIB_INCLUDE_DIRS}")
+  set(WITH_ZLIBINC ${ZLIB_INCLUDE_DIRS}/..)
 endif()
 
 # build DCMTK
