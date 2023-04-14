@@ -4,7 +4,7 @@ jobs:
   build:
     strategy:
       matrix:
-        platform: [windows-latest, ubuntu-latest]
+        platform: [windows-latest]
     runs-on: ${{ matrix.platform }}
     env:
       CMAKE_PRESET: windows-release
