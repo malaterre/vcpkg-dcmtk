@@ -39,7 +39,7 @@
         "CMAKE_BUILD_TYPE": "RelWithDebInfo",
         "VCPKG_DEFAULT_TRIPLET": "x64-windows"
       }
-    },
+    }
   ],
   "buildPresets": [
     {
@@ -53,7 +53,7 @@
       "configurePreset": "windows-release",
       "displayName": "Windows release",
       "description": "Build with Windows release settings"
-    },
+    }
   ],
   "testPresets": []
 }
