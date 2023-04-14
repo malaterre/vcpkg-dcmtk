@@ -2,6 +2,13 @@
 set(DCMTK_WITH_ZLIB ON) # zlib is used by PNG anyway
 set(DCMTK_WITH_PNG ON)
 
+set(BUILD_APPS OFF)
+set(DCMTK_ENABLE_STL ON)
+#set(USE_COMPILER_HIDDEN_VISIBILITY ON)
+set(DCMTK_WITH_DOXYGEN OFF)
+set(DCMTK_ENABLE_MANPAGES OFF)
+set(BUILD_SHARED_LIBS OFF)
+
 # https://github.com/DCMTK/dcmtk/pull/78
 if(WIN32)
   find_package(PNG REQUIRED)
