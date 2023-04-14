@@ -9,6 +9,9 @@ set(DCMTK_WITH_DOXYGEN OFF)
 set(DCMTK_ENABLE_MANPAGES OFF)
 set(BUILD_SHARED_LIBS OFF)
 
+set(DCMTK_WITH_ICU OFF)
+set(DCMTK_WITH_STDLIBC_ICONV OFF)
+
 # https://github.com/DCMTK/dcmtk/pull/78
 if(WIN32)
   find_package(PNG REQUIRED)
