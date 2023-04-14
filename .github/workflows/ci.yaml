@@ -1,0 +1,24 @@
+name: CI
+on: [push, pull_request]
+jobs:
+    build:
+    strategy:
+      matrix:
+        platform: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - name: Checkout Current Branch
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Run vcpkg
+        uses: lukka/run-vcpkg@v11
+        with:
+          appendedCacheKey: "ninja"
+          vcpkgDirectory: '${{ github.workspace }}/vcpkg'
+      - name: Run CMake
+        uses: lukka/run-cmake@v10
+        with:
+          cmakeListsTxtPath: '${{ github.workspace }}/CMakeLists.txt'
+          configurePreset: ${{env.CMAKE_PRESET}}
+          buildPreset: ${{env.CMAKE_PRESET}}
