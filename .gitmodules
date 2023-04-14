@@ -1,3 +1,6 @@
 [submodule "vcpkg"]
 	path = vcpkg
 	url = git@github.com:microsoft/vcpkg.git
+[submodule "dependencies/dcmtk"]
+	path = dependencies/dcmtk
+	url = git@github.com:DCMTK/dcmtk.git
