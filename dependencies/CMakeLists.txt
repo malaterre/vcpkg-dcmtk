@@ -9,8 +9,14 @@ set(DCMTK_WITH_DOXYGEN OFF)
 set(DCMTK_ENABLE_MANPAGES OFF)
 set(BUILD_SHARED_LIBS OFF)
 
+set(DCMTK_ENABLE_PRIVATE_TAGS ON)
+set(DCMTK_USE_DCMDICTPATH OFF)
+
 set(DCMTK_WITH_ICU OFF)
+set(DCMTK_WITH_ICONV OFF)
 set(DCMTK_WITH_STDLIBC_ICONV OFF)
+
+set(WIDE_CHAR_FILE_IO_FUNCTIONS ON)
 
 # https://github.com/DCMTK/dcmtk/pull/78
 #if(WIN32)
@@ -23,4 +29,4 @@ set(DCMTK_WITH_STDLIBC_ICONV OFF)
 #endif()
 
 # build DCMTK
-add_subdirectory(dcmtk EXCLUDE_FROM_ALL)
+add_subdirectory(dcmtk)
