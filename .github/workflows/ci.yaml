@@ -23,7 +23,8 @@ jobs:
           cmakeListsTxtPath: '${{ github.workspace }}/CMakeLists.txt'
           configurePreset: '${{ env.CMAKE_PRESET }}'
           buildPreset: '${{ env.CMAKE_PRESET }}'
-          packagePreset: '${{ env.CMAKE_PRESET }}'
+      - name: CMake install
+        run: cpack -G ZIP
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
