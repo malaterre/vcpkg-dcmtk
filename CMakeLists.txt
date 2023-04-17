@@ -11,4 +11,8 @@ add_subdirectory(dependencies)
 #add_executable(app app.cxx)
 #target_link_libraries(app LINK_PRIVATE ${DCMTK_LIBRARIES})
 
+set(CPACK_PACKAGE_NAME "dcmtk")
+set(CPACK_PACKAGE_VERSION_MAJOR 3)
+set(CPACK_PACKAGE_VERSION_MINOR 6)
+set(CPACK_PACKAGE_VERSION_PATCH 8)
 include(CPack)

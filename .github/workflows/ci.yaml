@@ -23,10 +23,10 @@ jobs:
           cmakeListsTxtPath: '${{ github.workspace }}/CMakeLists.txt'
           configurePreset: '${{ env.CMAKE_PRESET }}'
           buildPreset: '${{ env.CMAKE_PRESET }}'
-      - name: CMake install
-        run: cpack -G ZIP
+      - name: Manual CPack preset step
+        run: cpack --preset '${{ env.CMAKE_PRESET }}'
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: dcmtk
-          path: dcmtk.zip
+          path: windows-release/dcmtk-3.6.8-win64.zip
