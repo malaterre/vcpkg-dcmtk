@@ -10,3 +10,5 @@ add_subdirectory(dependencies)
 #find_package(DCMTK 3.6.6 CONFIG REQUIRED HINTS ${CMAKE_BINARY_DIR})
 #add_executable(app app.cxx)
 #target_link_libraries(app LINK_PRIVATE ${DCMTK_LIBRARIES})
+
+include(CPack)
