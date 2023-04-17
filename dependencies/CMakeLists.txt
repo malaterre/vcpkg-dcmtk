@@ -1,6 +1,6 @@
 # configure dcmtk options:
-#set(DCMTK_WITH_ZLIB ON) # zlib is used by PNG anyway
-#set(DCMTK_WITH_PNG ON)
+set(DCMTK_WITH_ZLIB ON) # zlib is used by PNG anyway
+set(DCMTK_WITH_PNG ON)
 
 set(BUILD_APPS OFF)
 set(DCMTK_ENABLE_STL ON)
