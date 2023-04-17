@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 6,
   "cmakeMinimumRequired": {
     "major": 3,
     "minor": 22,
@@ -21,16 +21,6 @@
       }
     },
     {
-      "name": "linux-release",
-      "displayName": "Linux release",
-      "description": "Configure with Linux release settings",
-      "inherits": "base",
-      "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
-        "VCPKG_DEFAULT_TRIPLET": "x64-linux"
-      }
-    },
-    {
       "name": "windows-release",
       "displayName": "Windows release",
       "description": "Configure with Windows release settings",
@@ -43,17 +33,22 @@
   ],
   "buildPresets": [
     {
-      "name": "linux-release",
-      "configurePreset": "linux-release",
-      "displayName": "Linux release",
-      "description": "Build with Linux release settings"
-    },
-    {
       "name": "windows-release",
       "configurePreset": "windows-release",
       "displayName": "Windows release",
       "description": "Build with Windows release settings"
     }
   ],
-  "testPresets": []
+  "testPresets": [],
+  "packagePresets": [
+    {
+      "name": "windows-release",
+      "configurePreset": "windows-release",
+      "displayName": "Windows release",
+      "description": "Package with Windows release settings",
+      "generators": [
+        "ZIP"
+      ]
+    }
+  ]
 }
