@@ -29,4 +29,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: dcmtk
-          path: windows-release/dcmtk-3.6.8-win64.zip
+          path: build/windows-release/dcmtk-3.6.8-win64.zip
+          if-no-files-found: error
