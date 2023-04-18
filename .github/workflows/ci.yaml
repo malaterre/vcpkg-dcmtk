@@ -8,7 +8,6 @@ jobs:
     runs-on: ${{ matrix.platform }}
     env:
       CMAKE_PRESET: windows-release
-      PROGRAMDATA: foobar
     steps:
       - name: Checkout Current Branch
         uses: actions/checkout@v3
