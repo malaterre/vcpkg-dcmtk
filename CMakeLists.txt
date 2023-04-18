@@ -6,6 +6,10 @@ project(vcpkg-dcmtk LANGUAGES CXX)
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/patch/3rdparty.cmake
   ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/dcmtk/CMake/3rdparty.cmake @ONLY)
+# pretend to release 3.6.8:
+configure_file(
+  ${CMAKE_CURRENT_SOURCE_DIR}/patch/dcmtkPrepare.cmake
+  ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/dcmtk/CMake/dcmtkPrepare.cmake @ONLY)
 add_subdirectory(dependencies)
 
 set(CPACK_PACKAGE_NAME "dcmtk")
