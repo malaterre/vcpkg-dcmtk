@@ -18,13 +18,12 @@ jobs:
         with:
           vcpkgDirectory: '${{ github.workspace }}/vcpkg'
       - name: Run CMake
-        uses: lukka/run-cmake@v10
+        uses: lukka/run-cmake@dev/package-preset
         with:
           cmakeListsTxtPath: '${{ github.workspace }}/CMakeLists.txt'
           configurePreset: '${{ env.CMAKE_PRESET }}'
           buildPreset: '${{ env.CMAKE_PRESET }}'
-      - name: Manual CPack preset step
-        run: cpack --preset '${{ env.CMAKE_PRESET }}'
+          packagePreset: '${{ env.CMAKE_PRESET }}'
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
