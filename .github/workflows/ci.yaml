@@ -18,7 +18,7 @@ jobs:
         with:
           vcpkgDirectory: '${{ github.workspace }}/vcpkg'
       - name: Run CMake
-        uses: lukka/run-cmake@dev/package-preset
+        uses: lukka/run-cmake@v10.5
         with:
           cmakeListsTxtPath: '${{ github.workspace }}/CMakeLists.txt'
           configurePreset: '${{ env.CMAKE_PRESET }}'
