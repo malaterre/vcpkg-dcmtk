@@ -2,7 +2,8 @@
 cmake_minimum_required(VERSION 3.25)
 project(vcpkg-dcmtk LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 11)
+#set(CMAKE_CXX_STANDARD 11)
+#set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # pretend to release 3.6.8:
 configure_file(
