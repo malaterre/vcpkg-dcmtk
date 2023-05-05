@@ -13,10 +13,13 @@ add_subdirectory(dependencies)
 set(DCMTK_TARGETS_IMPORTED ON)
 find_package(DCMTK 3.6.8 CONFIG REQUIRED HINTS ${CMAKE_BINARY_DIR})
 
+find_package(Boost 1.53 REQUIRED COMPONENTS filesystem)
 add_library(foo SHARED foo.cxx)
 message(STATUS ${DCMTK_INCLUDE_DIRS})
 target_include_directories(foo PRIVATE ${DCMTK_INCLUDE_DIRS})
+target_include_directories(foo PRIVATE ${Boost_INCLUDE_DIRS})
 target_link_libraries(foo PRIVATE ${DCMTK_LIBRARIES})
+target_link_libraries(foo PRIVATE Boost::filesystem)
 
 set(CPACK_PACKAGE_NAME "dcmtk")
 set(CPACK_PACKAGE_VERSION_MAJOR 3)
