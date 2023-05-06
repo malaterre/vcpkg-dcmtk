@@ -6,16 +6,16 @@ project(vcpkg-dcmtk LANGUAGES CXX)
 #set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # pretend to release 3.6.8:
-configure_file(
-  ${CMAKE_CURRENT_SOURCE_DIR}/patch/dcmtkPrepare.cmake
-  ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/dcmtk/CMake/dcmtkPrepare.cmake @ONLY)
-add_subdirectory(dependencies)
-set(DCMTK_TARGETS_IMPORTED ON)
-find_package(DCMTK 3.6.8 CONFIG REQUIRED HINTS ${CMAKE_BINARY_DIR})
+#configure_file(
+#  ${CMAKE_CURRENT_SOURCE_DIR}/patch/dcmtkPrepare.cmake
+#  ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/dcmtk/CMake/dcmtkPrepare.cmake @ONLY)
+#add_subdirectory(dependencies)
+#set(DCMTK_TARGETS_IMPORTED ON)
+#find_package(DCMTK 3.6.8 CONFIG REQUIRED HINTS ${CMAKE_BINARY_DIR})
 
 find_package(Boost 1.53 REQUIRED COMPONENTS filesystem)
 add_library(foo SHARED foo.cxx)
-message(STATUS ${DCMTK_INCLUDE_DIRS})
+#message(STATUS ${DCMTK_INCLUDE_DIRS})
 #target_include_directories(foo PRIVATE ${DCMTK_INCLUDE_DIRS})
 target_include_directories(foo PRIVATE ${Boost_INCLUDE_DIRS})
 #target_link_libraries(foo PRIVATE ${DCMTK_LIBRARIES})
