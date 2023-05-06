@@ -3,9 +3,9 @@
   "version-semver": "0.1.0",
   "dependencies": [
     {
-      "name": "libpng"
+      "name": "dcmtk"
     },
-	{
+    {
       "name": "boost-filesystem"
     }
   ]
