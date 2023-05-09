@@ -21,8 +21,7 @@ target_include_directories(foo PRIVATE ${DCMTK_INCLUDE_DIRS})
 target_include_directories(foo PRIVATE ${Boost_INCLUDE_DIRS})
 target_link_libraries(foo PRIVATE DCMTK::ofstd) # ${DCMTK_LIBRARIES})
 target_link_libraries(foo PRIVATE Boost::filesystem)
-set_property(TARGET foo PROPERTY
-             MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+set_property(TARGET foo PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 
 set(CPACK_PACKAGE_NAME "dcmtk")
 set(CPACK_PACKAGE_VERSION_MAJOR 3)
