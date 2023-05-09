@@ -1,5 +1,6 @@
 # packagePresets requires version 6 in CMakePreset.json
 cmake_minimum_required(VERSION 3.25)
+cmake_policy(SET CMP0091 NEW)
 project(vcpkg-dcmtk LANGUAGES CXX)
 
 #set(CMAKE_CXX_STANDARD 11)
@@ -20,6 +21,8 @@ target_include_directories(foo PRIVATE ${DCMTK_INCLUDE_DIRS})
 target_include_directories(foo PRIVATE ${Boost_INCLUDE_DIRS})
 target_link_libraries(foo PRIVATE ${DCMTK_LIBRARIES})
 target_link_libraries(foo PRIVATE Boost::filesystem)
+set_property(TARGET foo PROPERTY
+             MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 
 set(CPACK_PACKAGE_NAME "dcmtk")
 set(CPACK_PACKAGE_VERSION_MAJOR 3)
