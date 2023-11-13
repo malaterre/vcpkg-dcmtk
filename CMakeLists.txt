@@ -5,9 +5,14 @@ project(vcpkg-dcmtk LANGUAGES CXX)
 #set(CMAKE_CXX_STANDARD 11)
 #set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-if(WIN32)
-    set(CMAKE_MSVC_RUNTIME_LIBRARY MultiThreaded)
-endif(WIN32)
+#if(WIN32)
+#    set(CMAKE_MSVC_RUNTIME_LIBRARY MultiThreaded)
+#endif(WIN32)
+
+# https://discourse.cmake.org/t/mt-staticrelease-doesnt-match-value-md-dynamicrelease/5428/3
+if(POLICY CMP0091)
+  cmake_policy(SET CMP0091 NEW)
+endif()
 
 # pretend to release 3.6.8:
 configure_file(
@@ -24,6 +29,8 @@ target_include_directories(foo PRIVATE ${DCMTK_INCLUDE_DIRS})
 target_include_directories(foo PRIVATE ${Boost_INCLUDE_DIRS})
 target_link_libraries(foo PRIVATE ${DCMTK_LIBRARIES})
 target_link_libraries(foo PRIVATE Boost::filesystem)
+set_property(TARGET foo PROPERTY
+        MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 
 set(CPACK_PACKAGE_NAME "dcmtk")
 set(CPACK_PACKAGE_VERSION_MAJOR 3)
