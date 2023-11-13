@@ -21,6 +21,7 @@ jobs:
         uses: lukka/run-cmake@v10.5
         with:
           cmakeListsTxtPath: '${{ github.workspace }}/CMakeLists.txt'
+          configurePresetAdditionalArgs: "['-DCPACK_BINARY_ZIP=ON']"
           configurePreset: '${{ env.CMAKE_PRESET }}'
           buildPreset: '${{ env.CMAKE_PRESET }}'
           packagePreset: '${{ env.CMAKE_PRESET }}'
