@@ -26,7 +26,7 @@
       "description": "Configure with Windows release settings",
       "inherits": "base",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "CMAKE_BUILD_TYPE": "MinSizeRel",
         "VCPKG_DEFAULT_TRIPLET": "x64-windows-static"
       }
     }
